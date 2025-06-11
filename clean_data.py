@@ -1,8 +1,8 @@
 import os
 import json
 
-base_data_path = "/home/sankalp/quant_flakes/quantumml/data"
-datasets = ['ws2', 'wse2', 'mos2', 'mose2', 'mowse2']
+base_data_path = "/home/sankalp/yolo_flake_detection/"
+datasets = ['new_data']
 
 all_images = []
 all_annotations = []
@@ -24,7 +24,9 @@ for dataset in datasets:
         data = json.load(f)
     
     if categories is None and "categories" in data:
+        data["categories"] = [{"id": 0, "name": "flake"}]
         categories = data["categories"]
+        print(data["categories"])
 
     image_id_map = {}
     for img in data.get('images', []):
@@ -54,7 +56,7 @@ merged_data = {
 
 output_dir = os.path.join(base_data_path, "annotations")
 os.makedirs(output_dir, exist_ok=True)
-output_file = os.path.join(output_dir, "merged_instances_default_clean.json")
+output_file = os.path.join(output_dir, "instances_default_clean.json")
 
 with open(output_file, 'w') as f:
     json.dump(merged_data, f, indent=4)
