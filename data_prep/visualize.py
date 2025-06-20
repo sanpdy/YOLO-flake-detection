@@ -27,9 +27,10 @@ for img_path in samples:
     stem = img_path.stem
     gt_img   = draw_gt(img_path, LBL_VAL/ (stem + '.txt'))
     pred_img = Image.open(PRED_DIR/ (stem + '.jpg')).convert('RGB')
-    fig, (ax1,ax2) = plt.subplots(1,2, figsize=(12,6))
+    #fig, (ax1,ax2) = plt.subplots(1,2, figsize=(12,6))
+    fig, (ax1) = plt.subplots(1,1, figsize=(6,6))
     ax1.imshow(gt_img);   ax1.set_title('Ground Truth'); ax1.axis('off')
-    ax2.imshow(pred_img); ax2.set_title('Prediction');   ax2.axis('off')
+    #ax2.imshow(pred_img); ax2.set_title('Prediction');   ax2.axis('off')
     plt.tight_layout()
     out_path = OUT_DIR / f'{stem}_gt_vs_pred.png'
     fig.savefig(out_path, dpi=150)

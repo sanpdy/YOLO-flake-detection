@@ -1,13 +1,13 @@
 from ultralytics import YOLO
 
 def train_flake_detector(
-    data_cfg: str = 'flake.yaml',
-    pretrained_model: str = 'yolov8n.pt',
-    epochs: int = 50,
+    data_cfg: str = '/home/sankalp/yolo_flake_detection/flake_detection.yaml',
+    pretrained_model: str = 'yolo11x.pt',
+    epochs: int = 100,
     imgsz: int = 640,
     batch_size: int = 16,
     lr0: float = 0.01,
-    project: str = 'flake_runs',
+    project: str = 'new_flake_runs',
     run_name: str = 'exp1'
 ):
 

@@ -2,7 +2,7 @@ import json
 import random
 from pathlib import Path
 
-COCO_JSON   = Path('/home/sankalp/yolo_flake_detection/new_data/annotations/instances_default_clean.json')
+COCO_JSON   = Path('/home/sankalp/yolo_flake_detection/data/annotations/instances_default_clean.json')
 IMG_ROOT    = Path('/home/sankalp/yolo_flake_detection/new_data/')  
 YOLO_ROOT   = Path('/home/sankalp/yolo_flake_detection/new_data/yolo_dataset_segmentation')
 TRAIN_RATIO = 0.8
